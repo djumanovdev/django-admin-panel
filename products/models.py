@@ -7,6 +7,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='category_images/%Y/%m/%d/')
     description = models.TextField(blank=True)
+    color_code = models.CharField(max_length=7, default='#FFFFFF')
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
